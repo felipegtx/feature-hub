@@ -72,10 +72,10 @@ describe('defineHistoryService', () => {
       createHistoryServiceBinder = (
         serverRequest: ServerRequest = mockServerRequest
       ) => {
-        const mockServerRenderer: ServerRendererV1 = {serverRequest};
+        const mockServerRenderer: Partial<ServerRendererV1> = {serverRequest};
 
         const mockFeatureServices = {
-          's2:server-renderer': mockServerRenderer
+          's2:server-renderer': mockServerRenderer as ServerRendererV1
         };
 
         const mockEnv: FeatureServiceEnvironment<
